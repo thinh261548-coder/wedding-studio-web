@@ -1,0 +1,254 @@
+/* Main Website Styles */
+
+:root {
+    --primary-color: #dc3545;
+    --secondary-color: #6c757d;
+    --light-bg: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+/* Navigation */
+.navbar {
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-section h1,
+.hero-section p,
+.hero-section .btn {
+    position: relative;
+    z-index: 2;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(220, 53, 69, 0.2) !important;
+}
+
+/* Buttons */
+.btn-danger {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+.btn-outline-danger {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-outline-danger:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Badges */
+.badge {
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-weight: 500;
+}
+
+/* Forms */
+.form-control,
+.form-select {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.15);
+}
+
+.form-label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 30px;
+}
+
+.page-link {
+    border-radius: 8px;
+    margin: 0 3px;
+    color: var(--primary-color);
+    border-color: #ddd;
+}
+
+.page-link:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.page-link.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Alerts */
+.alert {
+    border: none;
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.alert-success {
+    border-left-color: #28a745;
+    background-color: #f0f9f6;
+    color: #28a745;
+}
+
+.alert-danger {
+    border-left-color: var(--primary-color);
+    background-color: #fdf0f2;
+    color: var(--primary-color);
+}
+
+.alert-info {
+    border-left-color: #17a2b8;
+    background-color: #f0f7fc;
+    color: #17a2b8;
+}
+
+/* Footer */
+footer {
+    background-color: #2c2c2c;
+    color: #fff;
+    margin-top: 60px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+footer a {
+    color: #aaa;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+footer hr {
+    border-color: #444;
+}
+
+/* Image Modal */
+.modal-content {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 400px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card, .alert {
+    animation: fadeIn 0.3s ease-out;
+}
